@@ -1,5 +1,5 @@
 % The power method for eigenvalue decomposition
-%
+% Jiwoong Jason Jeong
 % BMI500 Course
 % Lecture:  An Introduction to Blind Source Separation and Independent Component Analysis
 %           By: R. Sameni
@@ -17,7 +17,7 @@ clear
 clc;
 
 % Build a random signal
-N = 3;
+N = 2; % changed to 2 channels
 T = 1000;
 a = randn(1, N);
 x = diag(a) * randn(N, T);
@@ -28,7 +28,7 @@ Cx = cov(x');
 % Read 'eig' help and compare with 'eigs'
 [V,D] = eig(Cx)
 
-Itr = 100; % The number of power method iterations
+Itr = 1000; % The number of power method iterations (changed to 1000)
 
 v0 = rand(N, 1);
 v1 = EigenAnalysisPowerMethod(Cx, v0, Itr);

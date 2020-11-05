@@ -1,5 +1,5 @@
 % Independent component analysis using classical methods
-%
+% Jiwoong Jason Jeong
 % BMI500 Course
 % Lecture:  An Introduction to Blind Source Separation and Independent Component Analysis
 %           By: R. Sameni
@@ -30,7 +30,7 @@ switch example
         x = data(:, 2:end)'; % make the data in (channels x samples) format
         x = x - LPFilter(x, 1.0/fs); % remove the lowpass baseline
     case 3 % A synthetic signal
-        fs = 500;
+        fs = 1000; % changed fs to 1000
         len = round(3.0*fs);
         s1 = sin(2*pi*7.0/fs * (1 : len));
         s2 = 2*sin(2*pi*1.3/fs * (1 : len) + pi/7);
@@ -51,7 +51,7 @@ PlotECG(x, 4, 'b', fs, 'Raw data channels');
 
 % Run fastica
 approach = 'symm'; % 'symm' or 'defl'
-g = 'tanh'; % 'pow3', 'tanh', 'gauss', 'skew'
+g = 'skew'; % 'pow3', 'tanh', 'gauss', 'skew' % changed to different ones
 lastEigfastica = N; % PCA stage
 numOfIC = N; % ICA stage
 interactivePCA = 'off';

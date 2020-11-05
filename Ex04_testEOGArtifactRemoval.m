@@ -1,5 +1,5 @@
 % Removing EOG artifacts from EEG signals
-%
+% Jiwoong Jason Jeong
 % BMI500 Course
 % Lecture:  An Introduction to Blind Source Separation and Independent Component Analysis
 %           By: R. Sameni
@@ -20,7 +20,7 @@ example = 1;
 switch example
     case 1 % A sample EEG from the OSET package
         load EEGdata textdata data % Load a sample EEG signal
-        fs = 250;
+        fs = 125; % halved the fs
         x = data'; % make the data in (channels x samples) format
         % Check the channel names
         disp(textdata)
@@ -90,5 +90,5 @@ for ch = 1 : N
 end
 
 % Run the following script from the OSET package for a more advanced method
-testEOGRemoval
+%testEOGRemoval
 
